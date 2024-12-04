@@ -1,0 +1,32 @@
+{
+    "character": "Mario",
+    "age": 40,
+    "isHero": true,
+    "abilities": {
+        "jump": true,
+        "runSpeed": 10,
+        "powerUps": ["Super Mushroom", "Fire Flower", "Star"]
+    },
+    "friends": [
+        {
+            "name": "Luigi",
+            "age": 38,
+            "isHero": true
+        },
+        {
+            "name": "Princess Peach",
+            "age": 35,
+            "isHero": false
+        }
+    ],
+    "enemies": [
+        {
+            "name": "Bowser",
+            "isVillain": true
+        },
+        {
+            "name": "Goomba",
+            "isVillain": true
+        }
+    ]
+}
