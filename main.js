@@ -202,7 +202,179 @@ let lastName = 'Mandal';
 
 // == and ===
 
-var i = 1;
-var j = "1";
+// var i = 1;
+// var j = "1";
 
-console.log(i === j); 
+// console.log(i === j); 
+
+
+// More operators - Logical Operators
+
+// let x = 5;
+// let y = 10;
+
+// if(x > 0  && y > 0){
+//     console.log("Both x and y are greater than 0");
+// } else {
+//     console.log("At least one of x and y is not greater than 0");
+// }
+
+
+// if(x > 0  || y > 0){
+//     console.log("Either x and y are greater than 0");
+// } else {
+//     console.log("Neither of x and y is not greater than 0");
+// }
+
+
+// Functions
+
+// define it as a function
+// provide a name
+// optional: we can give it paramters
+// function add(num1,num2){
+//     return num1 + num2;
+// }
+
+// var result = add("fdjskl", 10);
+// console.log(result);
+
+
+// Create a funtion that returns true if a number is divisible by 3 OR 4, otherwise return false
+// function isDivisibleByThreeOrFive(input){
+//     return input % 3 === 0 || input % 5 === 0;
+//   }
+// console.log(isDivisibleByThreeOrFive(15));
+
+
+// // Other functions
+
+// let number = 3.7;
+// let roundedNumber = Math.floor(number);
+
+// console.log("Original number: " + number);
+// console.log("Rounded number: " + roundedNumber);
+
+
+// Control flows
+
+// function grade(mark){
+//     if(mark < 0 || mark > 100){
+//         return "Invalid argument";
+//     } else if(mark >= 70){
+//         return "pass with distinction";
+//     } else if(mark >= 40){
+//         return "pass";
+//     } else {
+//         return "Fail";
+//     }
+// }
+
+// console.log(grade(0)); // Fail
+// console.log(grade(39)); // Fail
+// console.log(grade(40)); // Pass
+// console.log(grade(69)); // Pass
+// console.log(grade(70)); // Pass with distinctions
+// console.log(grade(100)); // Pass with distinctions
+// console.log(grade(101)); // Invalid argument
+// console.log(grade(-1)); // Invalid argument
+
+// function grade(mark) {
+//     let result = mark >= 40 ? (mark > 40 ? "Pass": "Pass with Distinctions") 
+//     : (mark < 0 || mark > 100) ? "Invalid argument" :"Fail";
+//     return result;
+//   }
+
+//   console.log(grade(0)); // Fail
+//   console.log(grade(40)); // Pass
+//   console.log(grade(70)); // Pass with distinctions
+//   console.log(grade(101)); // Invalid argument
+
+// Update the grade function so that it returns "Invalid argument if mark is less than 0 or more than 100. DO NOT USE IF ELSE, JUST USE ? and :
+
+//// Switch statements
+
+// function priority(level){
+//     let result = "Code ";
+
+//     switch(level){
+//         case 3:
+//             result += "Red";
+//             break;
+//         case 2:
+//         case 1:
+//             result += "Amber";
+//             break;
+//         case 0: 
+//             result += "Green";
+//             break;
+//         default:    
+//             result += "Error";
+//     }
+
+//     return result;
+// }
+
+// console.log(priority(0));
+
+
+// Iterations
+
+
+let nums = [ 10, 6, 22, -7, 3];
+
+function highestForOfLoop(nums) {
+    // We are choosing the first element of the array as the initial highest number.
+    // This approach accounts for arrays with all negative numbers.
+    let highest = nums[0];
+
+    // Iterate over each number in the array.
+    for (let num of nums) {
+        // If the current number is greater than the highest, update the highest.
+        if (num > highest) {
+            highest = num;
+        }
+    }
+
+    return highest;
+}
+
+function highestForLoop(nums){
+    let highest = nums[0];
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] > highest){
+            highest = nums[i];
+        }
+    }
+    return highest;
+}
+
+
+function highestWhileLoop(nums){
+    let highest = nums[0];
+    let i = 0;
+    while(i < nums.length){
+        if(nums[i] > highest){
+            highest = nums[i];
+        }
+        i++;
+    }
+    return highest;
+}
+
+function highestDoWhileLoop(nums){
+    let highest = nums[0];
+    let i = 0;
+    do{
+        if(nums[i] > highest){
+            highest = nums[i];
+        }
+        i++;  
+    }while(i < nums.length);
+    return highest;
+}
+
+console.log("Highest for loop: " + highestForOfLoop(nums));
+console.log("Highest for-of loop: " + highestForLoop(nums));
+console.log("Highest while loop: " + highestWhileLoop(nums));
+console.log("Highest do-while loop: " + highestDoWhileLoop(nums));
