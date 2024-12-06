@@ -320,61 +320,103 @@ let lastName = 'Mandal';
 
 // Iterations
 
+// let x = 0;
 
-let nums = [ 10, 6, 22, -7, 3];
+//  for(let i = 0; i <= 100; i++){
+//     x+=i;
+//  }
+// console.log(x);
 
-function highestForOfLoop(nums) {
-    // We are choosing the first element of the array as the initial highest number.
-    // This approach accounts for arrays with all negative numbers.
-    let highest = nums[0];
+// let nums = [ 10, 6, 22, -7, 3];
 
-    // Iterate over each number in the array.
-    for (let num of nums) {
-        // If the current number is greater than the highest, update the highest.
-        if (num > highest) {
-            highest = num;
-        }
+// function highestForOfLoop(nums) {
+//     // We are choosing the first element of the array as the initial highest number.
+//     // This approach accounts for arrays with all negative numbers.
+//     let highest = nums[0];
+
+//     // Iterate over each number in the array.
+//     for (let num of nums) {
+//         // If the current number is greater than the highest, update the highest.
+//         if (num > highest) {
+//             highest = num;
+//         }
+//     }
+
+//     return highest;
+// }
+
+// function highestForLoop(nums){
+//     let highest = nums[0];
+//     for(let i = 0< nums.length; i < 0; i--){
+//         if(nums[i] > highest){
+//             highest = nums[i];
+//         }
+//     }
+//     return highest;
+// }
+
+
+// function highestWhileLoop(nums){
+//     let highest = nums[0];
+//     let i = 0;
+//     while(i < nums.length){
+//         if(nums[i] > highest){
+//             highest = nums[i];
+//         }
+//         i++;
+//     }
+//     return highest;
+// }
+
+// function highestDoWhileLoop(nums){
+//     let highest = nums[0];
+//     let i = 0;
+//     do{
+//         if(nums[i] > highest){
+//             highest = nums[i];
+//         }
+//         i++;  
+//     }while(i < nums.length);
+//     return highest;
+// }
+
+// console.log("Highest for loop: " + highestForOfLoop(nums));
+// console.log("Highest for-of loop: " + highestForLoop(nums));
+// console.log("Highest while loop: " + highestWhileLoop(nums));
+// console.log("Highest do-while loop: " + highestDoWhileLoop(nums));
+
+
+// Exceptions
+
+// function sumOfArray(arr) {
+//     let sum = 0;
+//     try {
+//         for (let i = 0; i < arr.length; i++) {
+//             sum += arr[i];
+//         }
+//         return sum;  // Moved the return statement inside the try block
+//     } catch (err) {
+//         console.log(err);
+//         return 0;  // Return a default value in case of an error
+//     } finally {
+//         console.log("Finally block executed");
+//     }
+// }
+// let myArr = 1;
+// console.log(sumOfArray(myArr));
+
+function divide(a,b){
+    if(b === 0){
+        throw new Error("Cannot divide by zero");
     }
-
-    return highest;
+    return a/b;
 }
 
-function highestForLoop(nums){
-    let highest = nums[0];
-    for(let i = 0; i < nums.length; i++){
-        if(nums[i] > highest){
-            highest = nums[i];
-        }
-    }
-    return highest;
+// If i am calling a method which throws an exception
+// Best practice is to wrap your code in a try-catch block
+
+try{
+    console.log(divide(10,0));
+} catch(err){
+    console.log(err);
 }
-
-
-function highestWhileLoop(nums){
-    let highest = nums[0];
-    let i = 0;
-    while(i < nums.length){
-        if(nums[i] > highest){
-            highest = nums[i];
-        }
-        i++;
-    }
-    return highest;
-}
-
-function highestDoWhileLoop(nums){
-    let highest = nums[0];
-    let i = 0;
-    do{
-        if(nums[i] > highest){
-            highest = nums[i];
-        }
-        i++;  
-    }while(i < nums.length);
-    return highest;
-}
-
-console.log("Highest for loop: " + highestForOfLoop(nums));
-console.log("Highest for-of loop: " + highestForLoop(nums));
-console.log("Highest while loop: " + highestWhileLoop(nums));
-console.log("Highest do-while loop: " + highestDoWhileLoop(nums));
